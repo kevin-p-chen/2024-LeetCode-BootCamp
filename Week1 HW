@@ -1,0 +1,15 @@
+q1
+class Solution(object):
+    def containsDuplicate(self, nums):
+        nums.sort()
+        fast = 0
+        slow = 0
+        while fast < len(nums)-1:
+            fast += 1
+            if nums[fast] == nums[slow]:
+                return True
+            else:
+                slow += 1
+        return False
+
+q2
