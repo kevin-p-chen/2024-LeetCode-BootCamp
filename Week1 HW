@@ -13,3 +13,21 @@ class Solution(object):
         return False
 
 q2
+class Solution(object):
+    def videoStitching(self, clips, time):
+        clips.sort()
+        left_bound = 0
+        right_bound = 0
+        count = 0
+        for i,j in clips:
+            if i > left_bound:
+                if i > right_bound:
+                    return -1
+                left_bound = right_bound
+                count += 1
+            right_bound = max(right_bound, j)
+            if right_bound >= time:
+                return count + 1
+        return -1
+
+q3
